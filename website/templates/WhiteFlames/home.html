@@ -1,0 +1,22 @@
+{% extends "WhiteFlames/base.html" %}
+{% block content %}
+    <div style="margin-left: 20px;margin-right: 20px;">		
+	     <article class="media content-section">
+		  <div class="media-body"> 
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">{{ post.author }}</a>
+		      <small class="text-muted">{{ post.datePosted }}</small>
+		    </div>
+		    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+		    <div class="embed-responsive embed-responsive-16by9">
+        	 <iframe class="embed-responsive-item" src={{ post.media }}></iframe>
+			</div><br>
+		    <p class="article-content">{{ post.content }}</p>
+		  </div>
+	      </article>
+	      <div class="media-body" style="margin-left: 40%"> 
+	       <button type="button" class="btn btn-outline-dark"><a href="{% url 'WhiteFlames-prevPage' %}">Prev</a></button>
+	       <button type="button" class="btn btn-outline-dark"><a href="{% url 'WhiteFlames-nextPage' %}">Next</a></button>
+	      </div>
+	</div>
+{% endblock content %}
